@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leedongyeol.com/sitemap.xml
