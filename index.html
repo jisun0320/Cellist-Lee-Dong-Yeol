@@ -214,13 +214,11 @@
   .intro-bar::after{content:"";position:absolute;top:0;bottom:0;left:-40px;width:40px;
     background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);
     filter:blur(1px);animation:introShimmer 1.5s .5s ease-in-out forwards}
-  .intro-tune{position:relative;font-family:var(--mono);font-size:9px;letter-spacing:.42em;
-    color:var(--rule);opacity:0;animation:introUp 1s .55s cubic-bezier(.22,1,.36,1) forwards}
   @keyframes introLoad{to{width:100%}}
   @keyframes introShimmer{from{left:-40px}to{left:100%}}
   @keyframes introUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){
-    #intro .intro-eyebrow,#intro .intro-name,#intro .intro-tune{opacity:1!important;transform:none!important}
+    #intro .intro-eyebrow,#intro .intro-name{opacity:1!important;transform:none!important}
     .intro-bar span{width:100%!important}
   }
 </style>
@@ -231,7 +229,6 @@
   <p class="intro-eyebrow">Cellist</p>
   <h2 class="intro-name">Lee Dong Yeol</h2>
   <div class="intro-bar"><span></span></div>
-  <p class="intro-tune">C&nbsp;&nbsp;G&nbsp;&nbsp;D&nbsp;&nbsp;A</p>
 </div>
 
 <div class="strings" aria-hidden="true">
