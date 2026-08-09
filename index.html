@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lee Dong Yeol — Cellist</title>
 <meta name="description" content="Official site of Lee Dong Yeol, Korean cellist. Fifth Prize, XVII International Tchaikovsky Competition.">
-<meta name="naver-site-verification" content="9bff4a38d12714ef6e6c295e8e201272da6f16a4" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
@@ -13,7 +12,6 @@
   :root{
     --ink:#0A0B0C; --ink-2:#111316; --ink-3:#171A1D;
     --rule:#2A2E33; --muted:#767C83; --silver:#B9BEC4; --white:#F2F3F4;
-    --amber:#C57C3A; --amber-soft:#8A5B32;
     --display:'Bodoni Moda', serif; --body:'Jost', sans-serif; --mono:'Space Mono', monospace;
     --rail:88px; --pad:clamp(20px,5vw,72px); --head:74px;
   }
@@ -113,7 +111,7 @@
 
   /* ---- schedule ---- */
   .event{display:grid;gap:6px 32px;padding:26px 0;border-bottom:1px solid var(--rule);align-items:baseline}
-  @media(min-width:860px){.event{grid-template-columns:215px 1fr 210px}}
+  @media(min-width:860px){.event{grid-template-columns:1fr 210px}}
   .event .date{font-family:var(--mono);font-size:20px;line-height:1.45;letter-spacing:.06em;color:var(--white)}
   .event .date .time{font-size:16px;color:var(--muted)}
   @media(max-width:859px){.event .date{font-size:18px}}
@@ -122,7 +120,14 @@
   .event .place{color:var(--muted);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
   @media(min-width:860px){.event .place{text-align:right}}
   .event-poster{align-items:start}
-  @media(min-width:860px){.event-poster{grid-template-columns:215px 1fr 180px 200px}}
+  @media(min-width:860px){.event-poster{grid-template-columns:1fr 180px 220px}}
+  /* year grouping */
+  .year-group{margin-top:52px}
+  .year-group:first-of-type{margin-top:8px}
+  .year-head{font-family:var(--display);font-weight:400;line-height:1;color:var(--white);
+    font-size:clamp(40px,6.5vw,72px);letter-spacing:.01em;padding-bottom:14px;border-bottom:1px solid var(--silver)}
+  .year-head.minor{font-size:clamp(20px,3vw,28px);letter-spacing:.02em;color:var(--silver)}
+  .year-group .event:first-of-type{padding-top:22px}
   .poster{border:1px solid var(--rule);margin-top:18px;max-width:280px;overflow:hidden}
   @media(min-width:860px){.poster{margin-top:0;max-width:none}}
   .poster img{display:block;width:100%;transition:transform .6s cubic-bezier(.22,1,.36,1)}
@@ -212,7 +217,7 @@
   .intro-tune{position:relative;font-family:var(--mono);font-size:9px;letter-spacing:.42em;
     color:var(--rule);opacity:0;animation:introUp 1s .55s cubic-bezier(.22,1,.36,1) forwards}
   @keyframes introLoad{to{width:100%}}
-  @keyframes introShimmer{from{left:-38px}to{left:100%}}
+  @keyframes introShimmer{from{left:-40px}to{left:100%}}
   @keyframes introUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){
     #intro .intro-eyebrow,#intro .intro-name,#intro .intro-tune{opacity:1!important;transform:none!important}
@@ -329,27 +334,26 @@
   <div class="inner"><div class="wrap">
     <div class="page-head"><h1>Schedule</h1><span class="tag">Future &amp; past</span></div>
 
-    <p class="sub">Future</p>
-    <article class="event">
-      <div class="date">18 JUL 2026</div>
-      <div>
-        <div class="title">Dvořák — Cello Concerto in B minor, Op. 104</div>
-        <div class="meta">North Czech Philharmonic Orchestra · European debut</div>
-      </div>
-      <div class="place">Smetana Hall, Prague</div>
-    </article>
-    <article class="event">
-      <div class="date">APR 2027</div>
+    <div class="year-group">
+      <h2 class="year-head">2027</h2>
+<article class="event">
       <div>
         <div class="title">Mexico debut with the Guanajuato Symphony Orchestra</div>
         <div class="meta">Invited by Music Director Juan Carlos Lomónaco</div>
       </div>
       <div class="place">Guanajuato, Mexico</div>
     </article>
-
-    <p class="sub" style="margin-top:64px">Past</p>
-    <article class="event event-poster">
-      <div class="date">11 JUL 2026<br><span class="time">16:30</span></div>
+    </div>
+    <div class="year-group">
+      <h2 class="year-head">2026</h2>
+<article class="event">
+      <div>
+        <div class="title">Dvořák — Cello Concerto in B minor, Op. 104</div>
+        <div class="meta">North Czech Philharmonic Orchestra · European debut</div>
+      </div>
+      <div class="place">Smetana Hall, Prague</div>
+    </article>
+<article class="event event-poster">
       <div>
         <div class="title">Elim Recital Series — Dongyeol Lee Cello Recital</div>
         <div class="meta">J. S. Bach · F. Schubert · G. Ligeti · D. Shostakovich</div>
@@ -361,8 +365,7 @@
         <figcaption>Elim Recital Series, 2026</figcaption>
       </figure>
     </article>
-    <article class="event event-poster">
-      <div class="date">11 APR 2026<br><span class="time">18:00</span></div>
+<article class="event event-poster">
       <div>
         <div class="title">Raum-Y Concert XX «In Search of Lost Time (Self)» — Dongyeol Lee &amp; Hyein Kim Cello Duo</div>
         <div class="meta">Boccherini · J. S. Bach · Ysaÿe · Kodály</div>
@@ -374,8 +377,10 @@
         <figcaption>Raum-Y XX · 2026</figcaption>
       </figure>
     </article>
-    <article class="event event-poster">
-      <div class="date">7 SEP 2024<br><span class="time">16:00</span></div>
+    </div>
+    <div class="year-group">
+      <h2 class="year-head">2024</h2>
+<article class="event event-poster">
       <div>
         <div class="title">Raum-Y Art Festival II «Part and Whole» — Dongyeol Lee Cello Recital</div>
         <div class="meta">J. S. Bach — Cello Suites No. 1 &amp; 6, Chaconne (Partita No. 2)</div>
@@ -387,8 +392,7 @@
         <figcaption>Raum-Y Art Festival II · 2024</figcaption>
       </figure>
     </article>
-    <article class="event event-poster">
-      <div class="date">17 FEB 2024<br><span class="time">17:00</span></div>
+<article class="event event-poster">
       <div>
         <div class="title">Raum-Y Concert XIX «The Road» — Dongyeol Lee &amp; Jinwoo Yang Cello Duo</div>
         <div class="meta">J. S. Bach · Boccherini · Schubert · Piatti · Popper · Telemann · Bruch</div>
@@ -400,8 +404,20 @@
         <figcaption>Raum-Y XIX · 2024</figcaption>
       </figure>
     </article>
-    <article class="event event-poster">
-      <div class="date">20 AUG 2022<br><span class="time">20:00</span></div>
+    </div>
+    <div class="year-group">
+      <h2 class="year-head">2023</h2>
+<article class="event">
+      <div>
+        <div class="title">17th International Tchaikovsky Competition — Cello Division</div>
+        <div class="meta">Fifth Prize · Laureate performances</div>
+      </div>
+      <div class="place">Moscow / St Petersburg</div>
+    </article>
+    </div>
+    <div class="year-group">
+      <h2 class="year-head">2022</h2>
+<article class="event event-poster">
       <div>
         <div class="title">Mona Lisa Smile 2 Inaugural Concert «Love, Beginning and a New Beginning»</div>
         <div class="meta">Dongyeol Lee Cello Recital</div>
@@ -413,8 +429,7 @@
         <figcaption>Mona Lisa Smile 2 · 2022</figcaption>
       </figure>
     </article>
-    <article class="event event-poster">
-      <div class="date">30 APR 2022<br><span class="time">19:00</span></div>
+<article class="event event-poster">
       <div>
         <div class="title">Raum-Y Concert XV «The Principle of Hope» — Dongyeol Lee Cello Recital</div>
         <div class="meta">Boccherini · Hindemith · Ysaÿe · Bruch · Cassadó · Haydn · Shostakovich</div>
@@ -426,8 +441,24 @@
         <figcaption>Raum-Y XV · 2022</figcaption>
       </figure>
     </article>
-    <article class="event event-poster">
-      <div class="date">17 APR 2021<br><span class="time">17:00</span></div>
+<article class="event">
+      <div>
+        <div class="title">Queen Elisabeth Competition — Cello</div>
+        <div class="meta">First round and Hindemith, Phantasiestück Op. 8 No. 2</div>
+      </div>
+      <div class="place">Brussels</div>
+    </article>
+<article class="event">
+      <div>
+        <div class="title">Bruch — Kol Nidrei, Op. 47</div>
+        <div class="meta">28th KBS–KEPCO Music Competition gala · broadcast on KBS 1TV</div>
+      </div>
+      <div class="place">Seoul</div>
+    </article>
+    </div>
+    <div class="year-group">
+      <h2 class="year-head">2021</h2>
+<article class="event event-poster">
       <div>
         <div class="title">Raum-Y Concert XIII «New Start» — Dongyeol Lee Cello Recital</div>
         <div class="meta">J. S. Bach · Brahms · Shostakovich · Prokofiev</div>
@@ -439,8 +470,10 @@
         <figcaption>Raum-Y XIII · 2021</figcaption>
       </figure>
     </article>
-    <article class="event event-poster">
-      <div class="date">21 NOV 2020<br><span class="time">20:00</span></div>
+    </div>
+    <div class="year-group">
+      <h2 class="year-head">2020</h2>
+<article class="event event-poster">
       <div>
         <div class="title">Raum-Y Art Festival I «Utopia» — Bach Cello Suites, Dongyeol Lee &amp; Geunyeop Lee Cello Duo</div>
         <div class="meta">J. S. Bach — Suites for Cello Solo</div>
@@ -452,8 +485,7 @@
         <figcaption>Raum-Y Art Festival I · 2020</figcaption>
       </figure>
     </article>
-    <article class="event event-poster">
-      <div class="date">11 JAN 2020<br><span class="time">19:30</span></div>
+<article class="event event-poster">
       <div>
         <div class="title">Raum-Y Concert XI «Rupture and Continuity» — Dongyeol Lee Cello Recital</div>
         <div class="meta">Beethoven · Schubert · Prokofiev · Rachmaninov</div>
@@ -465,46 +497,24 @@
         <figcaption>Raum-Y XI · 2020</figcaption>
       </figure>
     </article>
-
-    <article class="event">
-      <div class="date">2023</div>
-      <div>
-        <div class="title">17th International Tchaikovsky Competition — Cello Division</div>
-        <div class="meta">Fifth Prize · Laureate performances</div>
-      </div>
-      <div class="place">Moscow / St Petersburg</div>
-    </article>
-    <article class="event">
-      <div class="date">2022</div>
-      <div>
-        <div class="title">Queen Elisabeth Competition — Cello</div>
-        <div class="meta">First round and Hindemith, Phantasiestück Op. 8 No. 2</div>
-      </div>
-      <div class="place">Brussels</div>
-    </article>
-    <article class="event">
-      <div class="date">2022</div>
-      <div>
-        <div class="title">Bruch — Kol Nidrei, Op. 47</div>
-        <div class="meta">28th KBS–KEPCO Music Competition gala · broadcast on KBS 1TV</div>
-      </div>
-      <div class="place">Seoul</div>
-    </article>
-    <article class="event">
-      <div class="date">SOLOIST</div>
+    </div>
+    <div class="year-group">
+      <h2 class="year-head minor">Selected</h2>
+<article class="event">
       <div>
         <div class="title">Gyeonggi Philharmonic · Busan Philharmonic · Korean Symphony · Bucheon Philharmonic</div>
         <div class="meta">Concerto appearances</div>
       </div>
       <div class="place">Korea</div>
     </article>
-    <article class="event">
-      <div class="date">RECITAL</div>
+<article class="event">
       <div>
         <div class="title">Kumho Young Artist Concert Series · International Art Hall</div>
       </div>
       <div class="place">Seoul</div>
     </article>
+    </div>
+
     <p class="note">For engagement enquiries and a full performance history, please get in touch.</p>
   </div></div>
 </section>
