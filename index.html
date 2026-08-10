@@ -659,10 +659,11 @@
         </form>
       </div>
       <div class="panel-alt">
-        <p class="sub">Direct</p>
+        <p class="sub">Management</p>
         <ul class="lines">
-          <li><span class="field">Email</span><a href="mailto:cello7444@naver.com">cello7444@naver.com</a></li>
-          <li><span class="field">Phone</span><a href="tel:+821074446430">010-7444-6430</a></li>
+          <li><span class="field">Agency</span><a href="https://schwingungen.at/" target="_blank" rel="noopener">IMK — schwingungen.at</a></li>
+          <li><span class="field">Email</span><a href="mailto:office@classicimk.com">office@classicimk.com</a></li>
+          <li><span class="field">Instagram</span><a href="https://www.instagram.com/classicimk/" target="_blank" rel="noopener">@classicimk</a></li>
           <li><span class="field">Based in</span>Republic of Korea</li>
         </ul>
       </div>
@@ -729,7 +730,7 @@
     const f = e.target;
     const body = encodeURIComponent(f.message.value + '\n\n' + f.name.value + '\n' + f.email.value);
     document.getElementById('formNote').hidden = false;
-    location.href = 'mailto:cello7444@naver.com?subject=' + encodeURIComponent('Enquiry from ' + (f.name.value || 'the website')) + '&body=' + body;
+    location.href = 'mailto:office@classicimk.com?subject=' + encodeURIComponent('Enquiry from ' + (f.name.value || 'the website')) + '&body=' + body;
   });
 
   route();
