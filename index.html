@@ -169,22 +169,23 @@
   .gal .empty{display:grid;place-items:center;height:100%;font-family:var(--mono);font-size:9px;letter-spacing:.28em;color:var(--rule);text-transform:uppercase}
 
   /* ---- contact ---- */
-  .contact{display:grid;gap:28px;align-items:start;max-width:1000px}
-  @media(min-width:860px){.contact{grid-template-columns:1.15fr .85fr;gap:28px}}
-  .panel,.panel-alt{background:rgba(255,255,255,.045);border:1px solid var(--rule);padding:clamp(24px,3vw,40px)}
-  .panel .sub,.panel-alt .sub{margin-bottom:26px}
-  .panel-alt .lines li:last-child{border-bottom:0;padding-bottom:0}
-  .field{display:block;margin-bottom:6px;font-family:var(--mono);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
-  .row{margin-bottom:22px}
-  input,textarea{width:100%;background:rgba(10,11,12,.5);border:1px solid var(--rule);color:var(--white);font-family:var(--body);font-size:15px;padding:12px 14px;outline:none;transition:border-color .3s,background .3s}
-  input:focus,textarea:focus{border-color:var(--white);background:rgba(10,11,12,.75)}
-  .field{color:var(--silver)}
-  textarea{resize:vertical;min-height:96px}
-  .btn{display:inline-block;border:1px solid var(--rule);background:none;padding:12px 22px;font-family:var(--body);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--white);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
-  .btn:hover{background:var(--white);color:var(--ink);border-color:var(--white)}
-  .lines li{padding:16px 0;border-bottom:1px solid var(--rule)}
-  .lines a{color:var(--white)}
-  .lines a:hover{color:var(--muted)}
+  .contact{max-width:720px}
+  .contact-lead{max-width:560px;margin:2px 0 clamp(30px,4vw,46px);color:var(--silver);font-size:16px;line-height:1.7}
+  .imk-card{position:relative;overflow:hidden;max-width:640px;margin:0 auto;
+    border:1px solid var(--rule);border-radius:12px;background:rgba(255,255,255,.02);
+    padding:clamp(30px,4vw,52px) clamp(18px,3vw,40px)}
+  .imk-card::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% 0%,rgba(242,243,244,.06),transparent 55%)}
+  .imk-title{position:relative;text-align:center;font-family:var(--display);font-weight:400;color:var(--white);
+    font-size:clamp(30px,4vw,42px);letter-spacing:.14em;margin-bottom:clamp(22px,3vw,34px)}
+  .imk-rows{position:relative;display:flex;flex-direction:column;gap:14px}
+  .imk-row{display:flex;align-items:center;justify-content:space-between;gap:14px 20px;flex-wrap:wrap;
+    border:1px solid var(--rule);border-radius:9px;padding:18px clamp(16px,2.4vw,26px);
+    background:rgba(10,11,12,.35);transition:border-color .3s,background .3s}
+  a.imk-row:hover{border-color:var(--silver);background:rgba(255,255,255,.045)}
+  .imk-row .k{font-family:var(--mono);font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}
+  .imk-row .v{font-family:var(--display);font-size:clamp(15px,2vw,19px);color:var(--white);text-align:right;margin-left:auto}
+  a.imk-row:hover .v{color:var(--white)}
 
   footer{padding:34px var(--pad);padding-left:calc(var(--pad) + var(--rail-off,0px));border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
   @media(min-width:1080px){footer{--rail-off:var(--rail)}}
@@ -648,24 +649,14 @@
   <div class="inner"><div class="wrap">
     <div class="page-head"><h1>Contact</h1><span class="tag">Bookings &amp; press</span></div>
     <div class="contact">
-      <div class="panel">
-        <p class="sub">Send a message</p>
-        <form id="form">
-          <div class="row"><label class="field" for="n">Name</label><input id="n" name="name" type="text" autocomplete="name"></div>
-          <div class="row"><label class="field" for="e">Email</label><input id="e" name="email" type="email" autocomplete="email"></div>
-          <div class="row"><label class="field" for="m">Message</label><textarea id="m" name="message"></textarea></div>
-          <button class="btn" type="submit">Send message</button>
-          <p class="note" id="formNote" hidden>Your mail app is opening with this message ready to send.</p>
-        </form>
-      </div>
-      <div class="panel-alt">
-        <p class="sub">Management</p>
-        <ul class="lines">
-          <li><span class="field">Agency</span><a href="https://schwingungen.at/" target="_blank" rel="noopener">IMK — schwingungen.at</a></li>
-          <li><span class="field">Email</span><a href="mailto:office@classicimk.com">office@classicimk.com</a></li>
-          <li><span class="field">Instagram</span><a href="https://www.instagram.com/classicimk/" target="_blank" rel="noopener">@classicimk</a></li>
-          <li><span class="field">Based in</span>Republic of Korea</li>
-        </ul>
+      <p class="contact-lead">To get in touch with the artist for concerts, recitals, and collaborations, please reach out through the agency below.</p>
+      <div class="imk-card">
+        <div class="imk-title">IMK</div>
+        <div class="imk-rows">
+          <a class="imk-row" href="https://schwingungen.at/" target="_blank" rel="noopener"><span class="k">Website</span><span class="v">schwingungen.at</span></a>
+          <a class="imk-row" href="mailto:office@classicimk.com"><span class="k">Email</span><span class="v">office@classicimk.com</span></a>
+          <a class="imk-row" href="https://www.instagram.com/classicimk/" target="_blank" rel="noopener"><span class="k">Instagram</span><span class="v">@classicimk</span></a>
+        </div>
       </div>
     </div>
   </div></div>
@@ -723,15 +714,6 @@
     burger.setAttribute('aria-expanded','false'); document.body.style.overflow = '';
   }));
 
-
-  /* contact form -> mail client */
-  document.getElementById('form').addEventListener('submit', e => {
-    e.preventDefault();
-    const f = e.target;
-    const body = encodeURIComponent(f.message.value + '\n\n' + f.name.value + '\n' + f.email.value);
-    document.getElementById('formNote').hidden = false;
-    location.href = 'mailto:office@classicimk.com?subject=' + encodeURIComponent('Enquiry from ' + (f.name.value || 'the website')) + '&body=' + body;
-  });
 
   route();
 
